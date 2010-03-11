@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:app xmlns:ti="http://ti.appcelerator.org">
+<id>com.usu.geobob</id>
+<name>Geobob_1.0</name>
+<version>1.0</version>
+<publisher>alex</publisher>
+<url>geobob.com</url>
+<description>No description provided</description>
+<copyright>2010 by alex</copyright>
+<icon>appicon.png</icon>
+    <persistent-wifi>false</persistent-wifi>
+    <prerendered-icon>false</prerendered-icon>
+    <statusbar-style>default</statusbar-style>
+    <statusbar-hidden>false</statusbar-hidden>
+    <analytics>true</analytics>
+<guid>4355da3f-fe5b-415e-b7a2-372705db0128</guid>
+<property name="ti.android.google.map.api.key">04RXHBsD15RnZ38herXE63ZQu2yh8ioMx3MQyOg</property>
+</ti:app>

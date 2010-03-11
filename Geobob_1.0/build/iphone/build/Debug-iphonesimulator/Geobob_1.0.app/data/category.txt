@@ -1,0 +1,9 @@
+{"category":[{"icon":"images/fastfood.png","title":"food"},
+{"icon":"images/museum-historical.png","title":"historical"},
+{"icon":"images/info.png","title":"information"},
+{"icon":"images/observatory.png","title":"interesting"},
+{"icon":"images/cyclingsport.png","title":"outdoors"},
+{"icon":"images/friends.png","title":"people"},
+{"icon":"images/places-visited.png","title":"places"},
+{"icon":"images/university.png","title":"school"},
+{"icon":"images/photo.png","title":"travel"}]}
