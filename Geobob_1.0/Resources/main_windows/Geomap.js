@@ -1,3 +1,4 @@
+var win=Titanium.UI.currentWindow;
 var categorylist=readFile('data/category.txt');
 
 var annotationlist=readFile('data/annotations.txt');
@@ -99,10 +100,9 @@ function createviews()
 		if (evt.clicksource == 'rightButton')
 		{
 		   var index=isByName[evt.title];
-		   var w = Titanium.UI.createWindow({
-		   url:annotation[index].homepage
-		   });
-		   w.open({animated:true});
+		   var contents=annotation[index].content;
+		   createResourceWin(contents);
+		   
 		}
 
 	});
@@ -181,7 +181,7 @@ function createviews()
 					mapbutton.addEventListener('click', function(e)
 					{
 						var rowNum = e.source.rowNum;
-						index=isByNameList[rowNum];
+						var index=isByNameList[rowNum];
 						var pinRegion = {latitude:annotation[index].latitude,longitude:annotation[index].longitude,animate:true,latitudeDelta:0.005, longitudeDelta:0.005};
 						
 						
@@ -212,9 +212,14 @@ function createviews()
 					});
 					resourcebutton.addEventListener('click', function(e)
 					{
+						Ti.API.info('ok');
 						var rowNum = e.source.rowNum;
+						var index=isByNameList[rowNum];
+						var contents=annotation[index].content;
+						Ti.API.info(contents);
+						createResourceWin(contents);
 					});
-					resourcebuttonrowNum=rownum+1;
+					resourcebutton.rowNum=rownum+1;
 					row.add(resourcebutton);
 					datalist.push(row);
 				classnum++;
@@ -374,4 +379,12 @@ function readFile(filename){
 	var category=contents.text;
 	return category;
 } 		
-	
+function createResourceWin(contents)
+{
+	var w = Ti.UI.createWindow();
+	var webview = Ti.UI.createWebView();
+	webview.html = "<html>"+contents+"</html>";
+	w.add(webview);
+	win.tab.open(w);
+
+}
